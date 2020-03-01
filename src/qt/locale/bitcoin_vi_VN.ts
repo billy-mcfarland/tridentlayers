@@ -167,12 +167,12 @@
         <translation>Mở &amp;URI...</translation>
     </message>
     <message>
-        <source>Litecoin Core client</source>
-        <translation>Litecoin Core client</translation>
+        <source>Tridentlayers Core client</source>
+        <translation>Tridentlayers Core client</translation>
     </message>
     <message>
-        <source>Litecoin</source>
-        <translation>Litecoin</translation>
+        <source>Tridentlayers</source>
+        <translation>Tridentlayers</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -207,12 +207,12 @@
         <translation>Trợ &amp;giúp</translation>
     </message>
     <message>
-        <source>Litecoin Core</source>
-        <translation>Litecoin Core</translation>
+        <source>Tridentlayers Core</source>
+        <translation>Tridentlayers Core</translation>
     </message>
     <message>
-        <source>&amp;About Litecoin Core</source>
-        <translation>&amp;Về Litecoin Core</translation>
+        <source>&amp;About Tridentlayers Core</source>
+        <translation>&amp;Về Tridentlayers Core</translation>
     </message>
     <message numerus="yes">
         <source>%n hour(s)</source>
@@ -374,16 +374,16 @@ Loại: %3
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Litecoin Core</source>
-        <translation>Litecoin Core</translation>
+        <source>Tridentlayers Core</source>
+        <translation>Tridentlayers Core</translation>
     </message>
     <message>
         <source>version</source>
         <translation>version</translation>
     </message>
     <message>
-        <source>About Litecoin Core</source>
-        <translation>Về Litecoin Core</translation>
+        <source>About Tridentlayers Core</source>
+        <translation>Về Tridentlayers Core</translation>
     </message>
     </context>
 <context>
@@ -393,8 +393,8 @@ Loại: %3
         <translation>Chào mừng</translation>
     </message>
     <message>
-        <source>Litecoin Core</source>
-        <translation>Litecoin Core</translation>
+        <source>Tridentlayers Core</source>
+        <translation>Tridentlayers Core</translation>
     </message>
     <message>
         <source>Error</source>
@@ -593,8 +593,8 @@ Loại: %3
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Litecoin Core</source>
-        <translation>Litecoin Core</translation>
+        <source>Tridentlayers Core</source>
+        <translation>Tridentlayers Core</translation>
     </message>
     </context>
 <context>
