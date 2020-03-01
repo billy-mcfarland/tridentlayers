@@ -1,3 +1,3 @@
 # List of Tridentlayers IPv4 nodes sorted by 30 day availability, block height and version.
-159.89.177.81:3707
-104.236.31.92:3707
+18.219.34.102:3707
+3.20.247.138:3707
