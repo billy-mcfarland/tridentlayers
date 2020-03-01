@@ -35,8 +35,8 @@
         <translation>Билдирүүнү &amp;текшерүү...</translation>
     </message>
     <message>
-        <source>Litecoin</source>
-        <translation>Litecoin</translation>
+        <source>Tridentlayers</source>
+        <translation>Tridentlayers</translation>
     </message>
     <message>
         <source>Wallet</source>

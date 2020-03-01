@@ -4,6 +4,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "chainparams.h"
+#include <stdio.h>
 
 #include "random.h"
 #include "util.h"
@@ -115,16 +116,16 @@ public:
         pchMessageStart[1] = 0xc0;
         pchMessageStart[2] = 0xb6;
         pchMessageStart[3] = 0xdb;
-        vAlertPubKey = ParseHex("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9");
-        nDefaultPort = 9333;
+        vAlertPubKey = ParseHex("047418bb2363ca9bd9062b7bdbe69cdf58c6bf09a7cf783278769113a153c59a83ac0861871ed867e8ec05ede7c31725fc9b378d0402a2292ead48c2f4a0f6377f");
+        nDefaultPort = 3707;
         bnProofOfWorkLimit = ~uint256(0) >> 20;
-        nSubsidyHalvingInterval = 840000;
+        nSubsidyHalvingInterval = 420000;
         nEnforceBlockUpgradeMajority = 750;
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 0;
-        nTargetTimespan = 3.5 * 24 * 60 * 60; // 3.5 days
-        nTargetSpacing = 2.5 * 60; // 2.5 minutes
+        nTargetTimespan = 6 * 60 * 60; // 6 hours
+        nTargetSpacing = 2 * 60; // 2 minutes
         nMaxTipAge = 24 * 60 * 60;
 
         /**
@@ -137,30 +138,24 @@ public:
          *     CTxOut(nValue=50.00000000, scriptPubKey=0x5F1DF16B2B704C8A578D0B)
          *   vMerkleTree: 4a5e1e
          */
-        const char* pszTimestamp = "NY Times 05/Oct/2011 Steve Jobs, Apple’s Visionary, Dies at 56";
+        const char* pszTimestamp = "Keith Jackson, venerated college football sportscaster, dies at 89 01/13/2018";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
-        txNew.vout[0].nValue = 50 * COIN;
-        txNew.vout[0].scriptPubKey = CScript() << ParseHex("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9") << OP_CHECKSIG;
+        txNew.vout[0].nValue = 100 * COIN;
+        txNew.vout[0].scriptPubKey = CScript() << ParseHex("047418bb2363ca9bd9062b7bdbe69cdf58c6bf09a7cf783278769113a153c59a83ac0861871ed867e8ec05ede7c31725fc9b378d0402a2292ead48c2f4a0f6377f") << OP_CHECKSIG;
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime    = 1317972665;
-        genesis.nBits    = 0x1e0ffff0;
-        genesis.nNonce   = 2084524493;
+        genesis.nTime    = 1515895542;
+        genesis.nBits    = 0x1e0fffff;
+        genesis.nNonce   = 441509;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x12a765e31ffd4059bada1e25190f6e98c99d9714d334efa41a195a7e7e04bfe2"));
-        assert(genesis.hashMerkleRoot == uint256("0x97ddfbbae6be97fd6cdf3e7ca13232a3afff2353e29badfab7f73011edd4ced9"));
-
-        vSeeds.push_back(CDNSSeedData("litecointools.com", "dnsseed.litecointools.com"));
-        vSeeds.push_back(CDNSSeedData("litecoinpool.org", "dnsseed.litecoinpool.org"));
-        vSeeds.push_back(CDNSSeedData("xurious.com", "dnsseed.ltc.xurious.com"));
-        vSeeds.push_back(CDNSSeedData("koin-project.com", "dnsseed.koin-project.com"));
-        vSeeds.push_back(CDNSSeedData("weminemnc.com", "dnsseed.weminemnc.com"));
+        assert(hashGenesisBlock == uint256("0xbe3220d33ff8d63a02b25f4081970f1d304d8109ec89fe8c68f545e1ade4145c"));
+        assert(genesis.hashMerkleRoot == uint256("0xb79ed41b20ffdbf64127d56ce8892d47b15aa9187899e5b21d7f425a932f6caf"));
 
         base58Prefixes[PUBKEY_ADDRESS] = list_of(48);
         base58Prefixes[SCRIPT_ADDRESS] = list_of(5);
@@ -179,7 +174,7 @@ public:
         fSkipProofOfWorkCheck = false;
         fTestnetToBeDeprecatedFieldRPC = false;
 
-        // Litecoin: Mainnet v2 enforced as of block 710k
+        // Tridentlayers: Mainnet v2 enforced as of block 710k
         nEnforceV2AfterHeight = 710000;
     }
 
@@ -202,27 +197,24 @@ public:
         pchMessageStart[1] = 0xc1;
         pchMessageStart[2] = 0xb7;
         pchMessageStart[3] = 0xdc;
-        vAlertPubKey = ParseHex("0449623fc74489a947c4b15d579115591add020e53b3490bf47297dfa3762250625f8ecc2fb4fc59f69bdce8f7080f3167808276ed2c79d297054367566038aa82");
-        nDefaultPort = 19333;
+        vAlertPubKey = ParseHex("047418bb2363ca9bd9062b7bdbe69cdf58c6bf09a7cf783278769113a153c59a83ac0861871ed867e8ec05ede7c31725fc9b378d0402a2292ead48c2f4a0f6377f");
+        nDefaultPort = 13707;
         nEnforceBlockUpgradeMajority = 51;
         nRejectBlockOutdatedMajority = 75;
         nToCheckBlockUpgradeMajority = 100;
         nMinerThreads = 0;
-        nTargetTimespan = 3.5 * 24 * 60 * 60; // 3.5 days
-        nTargetSpacing = 2.5 * 60; // 2.5 minutes
+        nTargetTimespan = 6 * 60 * 60; // 6 hours
+        nTargetSpacing = 2 * 60; // 2 minutes
         nMaxTipAge = 0x7fffffff;
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1317798646;
-        genesis.nNonce = 385270584;
+        genesis.nTime = 1515895543;
+        genesis.nNonce = 198589;
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0xf5ae71e26c74beacc88382716aced69cddf3dffff24f384e1808905e0188f68f"));
+        assert(hashGenesisBlock == uint256("0x3773bb5f4167d692b6e83c4493351eb77c0a6216302d549a8b0510a7dba7500d"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("litecointools.com", "testnet-seed.litecointools.com"));
-        vSeeds.push_back(CDNSSeedData("xurious.com", "testnet-seed.ltc.xurious.com"));
-        vSeeds.push_back(CDNSSeedData("wemine-testnet.com", "dnsseed.wemine-testnet.com"));
 
         base58Prefixes[PUBKEY_ADDRESS] = list_of(111);
         base58Prefixes[SCRIPT_ADDRESS] = list_of(196);
@@ -240,7 +232,7 @@ public:
         fMineBlocksOnDemand = false;
         fTestnetToBeDeprecatedFieldRPC = true;
 
-        // Litecoin: Testnet v2 enforced as of block 400k
+        // Tridentlayers: Testnet v2 enforced as of block 400k
         nEnforceV2AfterHeight = 400000;
     }
     const Checkpoints::CCheckpointData& Checkpoints() const 
@@ -267,16 +259,16 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 1;
-        nTargetTimespan = 3.5 * 24 * 60 * 60; // 3.5 days
-        nTargetSpacing = 2.5 * 60; // 2.5 minutes
+        nTargetTimespan = 6 * 60 * 60; // 6 hours
+        nTargetSpacing = 2 * 60; // 2 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         nMaxTipAge = 24 * 60 * 60;
-        genesis.nTime = 1296688602;
-        genesis.nBits = 0x207fffff;
-        genesis.nNonce = 0;
+        genesis.nTime = 1515895544;
+        genesis.nBits = 0x1e0ffff0;
+        genesis.nNonce = 2087449111;
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 19444;
-        assert(hashGenesisBlock == uint256("0x530827f38f93b43ed12af0b3ad25a288dc02ed74d6d7857862df51fc56c416f9"));
+        assert(hashGenesisBlock == uint256("0x00000638d3d4aee99bdd75ec9a9c1195b5529d4ade6802a3a1e62422a8665683"));
 
         vFixedSeeds.clear(); //! Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();  //! Regtest mode doesn't have any DNS seeds.
@@ -289,7 +281,7 @@ public:
         fMineBlocksOnDemand = true;
         fTestnetToBeDeprecatedFieldRPC = false;
 
-        // Litecoin: v2 enforced using Bitcoin's supermajority rule
+        // Tridentlayers: v2 enforced using Bitcoin's supermajority rule
         nEnforceV2AfterHeight = -1;
     }
     const Checkpoints::CCheckpointData& Checkpoints() const 
@@ -317,7 +309,7 @@ public:
         fAllowMinDifficultyBlocks = false;
         fMineBlocksOnDemand = true;
 
-        // Litecoin: v2 enforced using Bitcoin's supermajority rule
+        // Tridentlayers: v2 enforced using Bitcoin's supermajority rule
         nEnforceV2AfterHeight = -1;
     }
 
