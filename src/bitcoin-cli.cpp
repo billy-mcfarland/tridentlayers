@@ -24,18 +24,18 @@ std::string HelpMessageCli()
     string strUsage;
     strUsage += _("Options:") + "\n";
     strUsage += "  -?                     " + _("This help message") + "\n";
-    strUsage += "  -conf=<file>           " + strprintf(_("Specify configuration file (default: %s)"), "litecoin.conf") + "\n";
+    strUsage += "  -conf=<file>           " + strprintf(_("Specify configuration file (default: %s)"), "tridentlayers.conf") + "\n";
     strUsage += "  -datadir=<dir>         " + _("Specify data directory") + "\n";
     strUsage += "  -testnet               " + _("Use the test network") + "\n";
     strUsage += "  -regtest               " + _("Enter regression test mode, which uses a special chain in which blocks can be "
                                                 "solved instantly. This is intended for regression testing tools and app development.") + "\n";
     strUsage += "  -rpcconnect=<ip>       " + strprintf(_("Send commands to node running on <ip> (default: %s)"), "127.0.0.1") + "\n";
-    strUsage += "  -rpcport=<port>        " + strprintf(_("Connect to JSON-RPC on <port> (default: %u or testnet: %u)"), 9332, 19332) + "\n";
+    strUsage += "  -rpcport=<port>        " + strprintf(_("Connect to JSON-RPC on <port> (default: %u or testnet: %u)"), 3706, 13706) + "\n";
     strUsage += "  -rpcwait               " + _("Wait for RPC server to start") + "\n";
     strUsage += "  -rpcuser=<user>        " + _("Username for JSON-RPC connections") + "\n";
     strUsage += "  -rpcpassword=<pw>      " + _("Password for JSON-RPC connections") + "\n";
 
-    strUsage += "\n" + _("SSL options: (see the Litecoin Wiki for SSL setup instructions)") + "\n";
+    strUsage += "\n" + _("SSL options: (see the Tridentlayers Wiki for SSL setup instructions)") + "\n";
     strUsage += "  -rpcssl                " + _("Use OpenSSL (https) for JSON-RPC connections") + "\n";
 
     return strUsage;
@@ -70,9 +70,9 @@ static bool AppInitRPC(int argc, char* argv[])
         std::string strUsage = _("Litcoin Core RPC client version") + " " + FormatFullVersion() + "\n";
         if (!mapArgs.count("-version")) {
             strUsage += "\n" + _("Usage:") + "\n" +
-                  "  litecoin-cli [options] <command> [params]  " + _("Send command to Litecoin Core") + "\n" +
-                  "  litecoin-cli [options] help                " + _("List commands") + "\n" +
-                  "  litecoin-cli [options] help <command>      " + _("Get help for a command") + "\n";
+                  "  tridentlayers-cli [options] <command> [params]  " + _("Send command to Tridentlayers Core") + "\n" +
+                  "  tridentlayers-cli [options] help                " + _("List commands") + "\n" +
+                  "  tridentlayers-cli [options] help <command>      " + _("Get help for a command") + "\n";
 
             strUsage += "\n" + HelpMessageCli();
         }
