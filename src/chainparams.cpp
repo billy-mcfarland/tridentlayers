@@ -124,7 +124,7 @@ public:
          *     CTxOut(nValue=50.00000000, scriptPubKey=0x5F1DF16B2B704C8A578D0B)
          *   vMerkleTree: 4a5e1e
          */
-        const char* pszTimestamp = "Bernie Sanders, aided by Hispanics, bursts into lead in Texas primary, Dallas News-UT Tyler poll shows 03/01/2020";
+        const char* pszTimestamp = "Bernie Sanders plots new strategy to foil Biden and take charge of 2020 race 03/07/2020";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -135,9 +135,9 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime    = 1583113473;
+        genesis.nTime    =  1583610467;
         genesis.nBits    = 0x1e0fffff;
-        genesis.nNonce   = 2545440;
+        genesis.nNonce   = 335445;
 
         hashGenesisBlock = genesis.GetHash();
 	// for creating a new genesis block use the following
@@ -153,13 +153,13 @@ public:
         //    }
         //    genesis.nNonce++;
         //}
-        //printf("block.GetHash = %s\n", genesis.GetHash().ToString().c_str());
-        //printf("block.merkle = %s\n", genesis.hashMerkleRoot.ToString().c_str());
-        //printf("nBits = %u\n", genesis.nBits);
-        //printf("genesis.nNonce = %u\n", genesis.nNonce);
+        printf("block.GetHash = %s\n", genesis.GetHash().ToString().c_str());
+        printf("block.merkle = %s\n", genesis.hashMerkleRoot.ToString().c_str());
+        printf("nBits = %u\n", genesis.nBits);
+        printf("genesis.nNonce = %u\n", genesis.nNonce);
 
-        assert(hashGenesisBlock == uint256("0x174c7dcbf4fd28eb2b4dd7e3cd108d8ad11a206f8d6594611b9808c536c6288c"));
-        assert(genesis.hashMerkleRoot == uint256("0x77eadec52f2cc80c71dcbfc7a87100b81d9f4e4a99c7726e538fec683bdcb781"));
+        assert(hashGenesisBlock == uint256("0x8505d5b548696703fe6037c8d8374e3dff693456f3c888ae9ab540696a47a97e"));
+        assert(genesis.hashMerkleRoot == uint256("0x4aba1c4495eb4d37678e95795dc8aab445a87c7a6259af801d3f38be0807657b"));
 
         base58Prefixes[PUBKEY_ADDRESS] = {48};
         base58Prefixes[SCRIPT_ADDRESS] = {5};
@@ -216,9 +216,9 @@ public:
         genesis.nNonce = 198589;
         hashGenesisBlock = genesis.GetHash();
 	// for creating a new genesis block use the following
-	// std::cout << hashGenesisBlock.ToString() << "\n";
+	std::cout << hashGenesisBlock.ToString() << "\n";
         // If genesis block hash does not match, then generate new genesis hash.
-        assert(hashGenesisBlock == uint256("0x45465af357c738555cde67afe57828cf6092aaf929bf0ac45e5d4fa6e1ea5107"));
+        assert(hashGenesisBlock == uint256("0xe8b71f5e11b7957f9be8bffbc4473f0cb067af301d568494d4142a9a9a255e3e"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -277,9 +277,9 @@ public:
         nDefaultPort = 19444;
 
 	// for creating a new genesis block use the following
-	// std::cout << hashGenesisBlock.ToString() << "\n";
+	std::cout << hashGenesisBlock.ToString() << "\n";
         // If genesis block hash does not match, then generate new genesis hash.
-        assert(hashGenesisBlock == uint256("0xb1cfff029ac6275dad974e9bcd5a60eb89968c705944029232995de2abbfb496"));
+        assert(hashGenesisBlock == uint256("0xdd5e4461597a27833f9d1909846b5f1c9fd6db24c6c5e29150b4e9d2b3f16715"));
 
         vFixedSeeds.clear(); //! Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();  //! Regtest mode doesn't have any DNS seeds.
